@@ -1,0 +1,78 @@
+* {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+.background img {
+    width: 100% !important;
+    object-fit: cover;
+    height: 100vh;
+}
+
+.form {
+    padding: 0px 5rem !important;
+    margin-top: 25px !important;
+    display: block !important;
+}
+
+.form h4 {
+    font-size: 25px !important;
+    text-align: center;
+}
+
+.fields {
+    position: relative;
+    padding: 5px !important;
+}
+
+.fields input[type="email"],
+.fields input[type="password"],
+.fields input[type="text"] {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    padding: 5px 15px !important;
+    border: 1px solid rgb(214, 208, 208);
+    outline: none;
+}
+
+.fields label {
+    display: inline-block !important;
+    margin-bottom: 5px !important;
+    margin-top: 15px !important;
+    font-weight: 600;
+}
+
+.fields button {
+    width: 100%;
+    padding: 7px 0 !important;
+    border: none;
+    background-color: rgb(127, 23, 168);
+    border-radius: 5px;
+    color: #ffff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.fields button:hover {
+    background-color: rgb(159, 27, 211);
+}
+
+.form li {
+    position: absolute;
+    right: 5.5rem;
+    margin: 5px 0 !important;
+}
+
+.fields p {
+    position: absolute;
+}
+
+.fields input[type="checkbox"] {
+    margin-top: 15px !important;
+}
+
+.back {
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
