@@ -28,35 +28,49 @@ const Register = () => {
 
         if (username === "") {
             setErrors((errors) => ({ ...errors, username: "Please Enter Username" }))
+            document.getElementById("username").style.border = "1px solid red"
         } else if (username.length < 3) {
             setErrors((errors) => ({ ...errors, username: "Username must be 3 charecters" }))
+            document.getElementById("username").style.border = "1px solid red"
         } else {
             setErrors((errors) => ({ ...errors, username: "" }))
+            document.getElementById("username").style.border = "1px solid skyblue"
         }
 
         if (email.trim() === "") {
             setErrors((errors) => ({ ...errors, email: "Enter Email" }))
+            document.getElementById("email").style.border = "1px solid red"
         }
         else if (!emailPatern.test(email)) {
             setErrors((errors) => ({ ...errors, email: "Enter Valid Email" }))
+            document.getElementById("email").style.border = "1px solid red"
         }
         else {
             setErrors((errors) => ({ ...errors, email: "" }))
+            document.getElementById("email").style.border = "1px solid skyblue"
         }
+
         if (password.trim() === "") {
             setErrors((errors) => (({ ...errors, password: "Please Enter Password" })))
+            document.getElementById("password").style.border = "1px solid red"
         } else if (password.trim().length < 8) {
             setErrors((errors) => (({ ...errors, password: "Password Must Be 8 Charecters" })))
+            document.getElementById("password").style.border = "1px solid red"
         } else {
             setErrors((errors) => ({ ...errors, password: "" }))
+            document.getElementById("password").style.border = "1px solid skyblue"
         }
+
 
         if (cpassword.trim() === "") {
             setErrors((errors) => (({ ...errors, cpassword: "Please Enter Password" })))
+            document.getElementById("cpassword").style.border = "1px solid red"
         } else if (cpassword.trim() !== password.trim()) {
             setErrors((errors) => (({ ...errors, cpassword: "Password And Confirm Password Must Be Same" })))
+            document.getElementById("cpassword").style.border = "1px solid red"
         } else {
             setErrors((errors) => ({ ...errors, cpassword: "" }))
+            document.getElementById("cpassword").style.border = "1px solid skyblue"
         }
     }
     const emailPatern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -99,7 +113,7 @@ const Register = () => {
 
                         <div className='fields mt-2'>
                             <input type='checkbox' id='check' />
-                            <span>&nbsp;Remember me</span>
+                            <span className='text-white'>&nbsp;Remember me</span>
                         </div>
 
                         <div className='fields'>
@@ -108,7 +122,7 @@ const Register = () => {
 
                         <div className='create mt-4 text-center'>
                             <Link to='/' className='nav-link'>
-                                <p>Already have account<b>Login</b></p>
+                                <p className='text-white'>Already have account<b className='text-warning'>Login</b></p>
                             </Link>
                         </div>
                     </form>

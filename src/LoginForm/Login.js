@@ -23,23 +23,29 @@ const Login = () => {
 
         if (email.trim() === "") {
             setErrors((errors) => ({ ...errors, email: "Enter Email" }))
+            document.getElementById("email").style.border = "1px solid red"
         }
         else if (!emailPatern.test(email)) {
             setErrors((errors) => ({ ...errors, email: "Enter Valid Email" }))
+            document.getElementById("email").style.border = "1px solid red"
         }
         else {
             setErrors((errors) => ({ ...errors, email: "" }))
+            document.getElementById("email").style.border = "1px solid skyblue"
         }
 
         if (password.trim() === "") {
             setErrors((errors) => ({ ...errors, password: "Plase enter password" }))
+            document.getElementById("password").style.border = "1px solid red"
         }
 
         else if (password.trim().length < 8) {
             setErrors((errors) => ({ ...errors, password: "Password must be at least 8 charecters" }))
+            document.getElementById("password").style.border = "1px solid red"
         }
         else {
             setErrors((errors) => ({ ...errors, password: "" }))
+            document.getElementById("password").style.border = "1px solid skyblue"
         }
 
     }
@@ -55,7 +61,7 @@ const Login = () => {
 
                 <div className='col-md-5 back'>
                     <form className='form'  >
-                        <h4 className='mt-5 text-white'>Login Here</h4>
+                        <h4 className='mt-5 text-white pb-5'>Login Here</h4>
                         <div className='fields'>
                             <label htmlFor='email'>E-mail</label>
                             <input type='email' id='email' name='email' value={email} placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
@@ -70,17 +76,17 @@ const Login = () => {
 
                         <div className='fields mt-2'>
                             <input type='checkbox' id='check' />
-                            <span>&nbsp;Remember me</span>
+                            <span className='text-white'>&nbsp;Remember me</span>
                         </div>
 
                         <div className='fields'>
                             <button onClick={submiHandler}>Login</button>
                         </div>
-                        <li className='nav-link'><a href='#'>Forgot Password</a></li>
+                        <li className='nav-link '><a href='#' className='text-white'>Forgot Password</a></li>
 
                         <div className='create mt-5 text-center'>
                             <Link to='/register' className='nav-link'>
-                                <p>New user <b>Create Account</b></p>
+                                <p className='text-white'>New user <b className='text-warning'>Create Account</b></p>
                             </Link>
                         </div>
                     </form>
